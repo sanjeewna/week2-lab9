@@ -4,7 +4,7 @@ Welcome to the Lab Starter Code Repository! This repository serves as the starti
 
 ### Preparation
 
-1. Go to your "`Documents`" folder and create a new folder called `dev`. This folder will be used to store all of your lab activities for the fullStack course
+1. Create a new folder called `dev`. This folder will be used to store all of your lab activities for the fullStack course
 
 2. Inside the `dev` folder, create another folder named `week2`.
 
@@ -12,49 +12,70 @@ Welcome to the Lab Starter Code Repository! This repository serves as the starti
 
 > You will follow a similar process for each week's activities. For example, in week 3, create a new folder inside the "dev" folder named "`week3`" and clone the repository for that week's activities.
 
-These steps will help you organize your lab activities in separate folders within the "`dev`" directory for each week's work.
+### Clone the repo
 
-### Requirements
+1. Navigate to the directory where you want to clone the repository e.g `week2`1. 
+   
+2. Open the terminal in VsCode
 
-To get started, please follow these steps:
+3. Once you're in the desired directory, use the `git clone` command followed by the repository URL you copied earlier. For example:
+   ```
+   git clone https://github.com/Full-Stack-TX00FC40/lab-starter  week2-lab2
+   ```
 
-1. **Fork this Repository**: 
+4. Git will download the repository to your local machine. Once the process is complete, you'll have a local copy of the repository.
 
-- Click the "Fork" button in the top right corner of this repository to create a copy in your own GitHub account.
+#### Create a New Repository on GitHub
 
-<img src="./img/fork1.png" width="75%">
+1. Go to the GitHub website .
 
-- Make sure to **customize** the **fork name** at the same time you're creating it e.g. `Week2-lab1`
+2. Click on the plus sign icon in the top right corner of the page, and then select "New repository."
 
-<img src="./img/fork2.png"  width="75%">
+3. Fill in the details for your new repository:
+   - Repository name: Choose a name for your new repository.
+   - Description (optional): Add a short description to explain the repository's purpose.
+   - Visibility: Choose between "Public" or "Private," depending on who should have access.
+   - Do not initialize the repository with a `README` file or a `.gitignore` file.
 
-2. **Clone repo to Your Local Machine**: Clone your forked repository to your local machine using the following command. 
-  - Replace `<your-username>` with your GitHub username
-  - Replace `<new-repo>` with the name of the task e.g. `week2-task1`
+4. Click the "Create repository" button to create your new repository.
 
-```shell
-git clone https://github.com/<your-username>/<new-repo>.git
-```
+#### Change the Origin to Point to Your New Repository
 
-3. **Verify Your Username**: Confirm that your forked repository is set as the remote origin. Run the following command to check:
+After you've cloned the repository and created a new one on GitHub, follow these steps to change the origin to point to your new repository:
 
-```shell
+1. Open your terminal or command prompt if it's not already open.
+
+2. Check the remote repositories associated with your local repository using the following command:
+```sh
 git remote -v
 ```
 
-You should see your forked repository URL as the origin.
+This command will display the current remote repository URLs. You should see the original GitHub repository's URL as `origin`.
+
+3. To change the remote URL to point to your new repository on GitHub, use the `git remote set-url origin` command as follows:
+```sh
+git remote set-url origin https://github.com/yourusername/new-repository.git
+```
+
+Replace `yourusername` with your GitHub username and `new-repository` with the name of the repository you created.
+
+4. Verify that the remote URL has been updated by running `git remote -v` again. You should now see the URL of your new repository as `origin`.
+
+5. You can now push your changes to your new GitHub repository using standard Git commands.
 
 ### Submission
 
-Upon completing a lab exercise, follow these steps to submit your work:
+Upon completing any lab exercise, follow these steps to submit your work:
 
-1. **Stage Your Changes**: Add all the changes you've made to the staging area using the following command:
+1. **Stage Your Changes**: 
+
+*Stop the server* if it is running. Add all the changes you've made to the staging area using the following command:
 
 ```shell
 git add .
 ```
 
-2. **Commit Your Changes**: Commit your changes with a descriptive message. Replace `#` with the lab number and week number you're working on:
+1. **Commit Your Changes**: Commit your changes with a descriptive message. Replace `#` with the lab number and week number you're working on:
 
 ```shell
 git commit -m "Solved lab # week #"
@@ -63,9 +84,5 @@ git commit -m "Solved lab # week #"
 3. **Push Your Changes**: Push your committed changes to your forked repository on GitHub:
 
 ```shell
-git push origin main
+git push -u origin main
 ```
-
-Note: If you're working on a branch other than `main`, replace `main` with the name of your branch.
-
-Happy coding!
